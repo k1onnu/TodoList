@@ -1,6 +1,8 @@
 import pytest
-from TodoViewer import TodoViewer
+
 from Task import Task
+from TodoViewer import TodoViewer
+
 
 @pytest.fixture
 def viewer():
@@ -31,4 +33,7 @@ def test_viewer_show_empty_incomplete_tasks(viewer, capsys):
     tasks = []
     viewer.show_tasks_uncompleted(tasks)
     captured = capsys.readouterr()
-    assert "📋 В списке нет задач. Сначала добавьте хотя бы одну незавршенную задачу." in captured.out
+    assert (
+            "📋 В списке нет задач. Сначала добавьте хотя бы одну незавршенную задачу."
+            in captured.out
+    )

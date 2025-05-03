@@ -1,5 +1,5 @@
-import pytest
 from Task import Task
+
 
 def test_task_creation():
     task = Task("Сделать домашку")

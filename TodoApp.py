@@ -1,6 +1,7 @@
 from TaskManager import TaskManager
 from TodoViewer import TodoViewer
 
+
 class TodoApp:
     def __init__(self):
         self.manager = TaskManager()
@@ -42,8 +43,6 @@ class TodoApp:
 
                 case "5":
                     self.manager.remove_completed_tasks()
-                    if not self.manager.get_tasks():
-                        print("\n📋 Список задач пуст!")
 
                 case "6":
                     print("\n👋 Выход...")
