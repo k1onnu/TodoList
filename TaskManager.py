@@ -1,6 +1,5 @@
 from Task import Task
 
-
 class TaskManager:
     def __init__(self):
         self.tasks = []
@@ -11,6 +10,7 @@ class TaskManager:
             return
         task = Task(title)
         self.tasks.append(task)
+        return task
 
     def get_tasks(self):
         return self.tasks
@@ -31,7 +31,13 @@ class TaskManager:
 
     def remove_completed_tasks(self):
         if not any(task.completed for task in self.tasks):
-            print("\n📋 Список уже пуст или нет завершенных задач.")
+            print("\n📋 Список уже пуст или нет завершённых задач.")
             return
         self.tasks = [task for task in self.tasks if not task.completed]
         print("\n🗑 Чистим список...")
+
+    def get_task_by_id(self, task_id):  # если потом нужно
+        for task in self.tasks:
+            if task.id == task_id:
+                return task
+        return None
